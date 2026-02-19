@@ -17,7 +17,7 @@ from sklearn.naive_bayes import GaussianNB
 
 file_path = r"D:\RT_IOT2022"   
 if not os.path.exists(file_path):
-    print("File not found! Check path:", file_path)
+    print("File not found. Check path:", file_path)
     exit()
 
 data = pd.read_csv(file_path)
