@@ -28,7 +28,7 @@ print("Dataset Shape:", data.shape)
 
 data.dropna(inplace=True)
 
-print("\nChecking column types...\n")
+print("\nChecking column types\n")
 print(data.dtypes.value_counts())
 X = data.iloc[:, :-1]
 y = data.iloc[:, -1]
@@ -74,7 +74,7 @@ best_model_obj = None
 best_model_name = ""
 
 for name, model in models.items():
-    print(f"\nTraining {name}...")
+    print(f"\nTraining {name}")
 
     start = time.time()
     model.fit(X_train, y_train)
@@ -145,3 +145,4 @@ plt.title(f'Confusion Matrix - {best_model_name}')
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.show()
+
