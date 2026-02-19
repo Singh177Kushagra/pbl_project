@@ -4,12 +4,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from sklearn.metrics import confusion_matrix
-
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
@@ -17,8 +15,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
 
-file_path = r"D:\RT_IOT2022"   # <-- add .csv if missing
-
+file_path = r"D:\RT_IOT2022"   
 if not os.path.exists(file_path):
     print("File not found! Check path:", file_path)
     exit()
@@ -52,13 +49,13 @@ X = X.apply(pd.to_numeric)
 scaler = StandardScaler()
 X = scaler.fit_transform(X)
 
-print("Preprocessing Complete!")
+print("Preprocessing Complete")
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42, stratify=y
 )
 
-print("Train-Test Split Done")
+print("Train-Test Split done")
 print("Training samples:", X_train.shape)
 print("Testing samples:", X_test.shape)
 
@@ -70,7 +67,6 @@ models = {
     "Decision Tree": DecisionTreeClassifier(),
     "Naive Bayes": GaussianNB()
 }
-
 results = []
 
 best_f1 = 0
